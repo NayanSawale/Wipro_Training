@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Column Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="content">
+            <div class="column">Column 1</div>
+            <div class="column">Column 2</div>
+            <div class="column">Column 3</div>
+        </div>
+        <div class="footer">Footer</div>
+    </div>
+    <style>
+           
+/* CSS Box Model: Universal reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Container styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+/* Header, Footer, and Content styling */
+.header, .footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+/* Column styling */
+.column {
+    background: #f4f4f4;
+    padding: 20px;
+    flex: 1;
+    margin: 0 10px;
+}
+
+/* Ensure margins between columns */
+.column:first-child {
+    margin-left: 0;
+}
+
+.column:last-child {
+    margin-right: 0;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .column {
+        margin: 10px 0;
+    }
+}
+        </style>
+</body>
+</html>

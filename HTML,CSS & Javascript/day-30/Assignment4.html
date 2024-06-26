@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Multi-Column Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <div class="column">Column 1</div>
+            <div class="column">Column 2</div>
+            <div class="column">Column 3</div>
+        </div>
+        <div class="footer">Footer</div>
+    </div>
+
+    <form class="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea>
+        
+        <button type="submit">Submit</button>
+    </form>
+    <style>
+        /* CSS Box Model: Universal reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Container styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+/* Header, Footer, and Content styling */
+.header, .footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Menu styling */
+.menu {
+    background: #444;
+    margin: 20px 0;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+
+.menu ul li {
+    position: relative;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    transition: background 0.3s ease;
+}
+
+.menu ul li a:hover {
+    background: #666;
+}
+
+/* Add animation to menu items */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.menu ul li {
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.menu ul li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.menu ul li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.menu ul li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.menu ul li:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Content styling */
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+/* Column styling */
+.column {
+    background: #f4f4f4;
+    padding: 20px;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.column:first-child {
+    margin-left: 0;
+}
+
+.column:last-child {
+    margin-right: 0;
+}
+
+/* Contact form styling */
+.contact-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #555;
+}
+
+/* Add animation to form elements */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.contact-form input, .contact-form textarea, .contact-form button {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Ensure the page is responsive */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .column {
+        margin: 10px 0;
+    }
+
+    .menu ul {
+        flex-direction: column;
+    }
+
+    .menu ul li {
+        animation: none;
+    }
+
+    .menu ul li a {
+        padding: 10px;
+    }
+}
+    </style>
+</body>
+</html>
