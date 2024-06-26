@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Authentication</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <section id="registration">
+            <h2>Register</h2>
+            <form id="registrationForm" novalidate>
+                <label for="reg-username">Username:</label>
+                <input type="text" id="reg-username" name="username" required>
+                <span class="error" aria-live="polite"></span>
+                
+                <label for="reg-email">Email:</label>
+                <input type="email" id="reg-email" name="email" required>
+                <span class="error" aria-live="polite"></span>
+                
+                <label for="reg-password">Password:</label>
+                <input type="password" id="reg-password" name="password" required>
+                <span class="error" aria-live="polite"></span>
+                
+                <label for="reg-confirm-password">Confirm Password:</label>
+                <input type="password" id="reg-confirm-password" name="confirm-password" required>
+                <span class="error" aria-live="polite"></span>
+                
+                <button type="submit">Register</button>
+            </form>
+        </section>
+        
+        <section id="login">
+            <h2>Login</h2>
+            <form id="loginForm" novalidate>
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" name="username" required>
+                <span class="error" aria-live="polite"></span>
+                
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password" required>
+                <span class="error" aria-live="polite"></span>
+                
+                <button type="submit">Login</button>
+            </form>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+main {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #4CAF50;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    height: 12px;
+    margin-bottom: 10px;
+}
+    </style>
+</body>
+</html>
